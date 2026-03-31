@@ -4,7 +4,7 @@
 ## Overview
 An LLM-powered automation tool designed to eliminate decision fatigue by converting unstructured natural language (brain dumps) into structured, prioritized tasks directly within a Notion database.
 
-This project serves as a lightweight, low-friction pipeline fo manage daily workflows, allowing for maximum focus on deepwork and complex daily or non-daily tasks.
+This project serves as a lightweight, low-friction pipeline to manage daily workflows, allowing for maximum focus on deepwork and complex daily or non-daily tasks.
 
 ## Tech-Stack
 - **Core** : Python 3.10.X
@@ -22,7 +22,7 @@ cd notion_jarvis
 ```
 
 ### 2. Environment Configuration
-Create and activate the isolated Conda environmentto ensure dependency stability:
+Create and activate the isolated Conda environment to ensure dependency stability:
 
 ```
 conda create -n notion_jarvis python=3.10.13
