@@ -8,7 +8,7 @@ This project serves as a lightweight, low-friction pipeline fo manage daily work
 
 ## Tech-Stack
 - **Core** : Python 3.10.X
-- **LLM Engines** : Google Generative AI (Testing) / Groq Llama 3 (Production)
+- **LLM Engines** : Groq Llama 3 (Testing/Deploy)
 - **Integrations** : Notion API
 - **Environment Management** : Conda
 
@@ -33,11 +33,10 @@ pip install -r requirements.txt
 Create a `.env` file in the project's root directory (it is highly recommended to add it to your `.gitignore` file) and configure your API keys:
 
 ```
-GEMINI_API_KEY="your_google_ai_studio_key"
 GROQ_API_KEY="your_groq_api_key"
 NOTION_DATABASE_ID="your_notion_target_database_id"
 NOTION_API_KEY="your_notion_internal_integration_token"
 ```
 
 ## Current Status
-**In Development:** Version 1.0 (MVP). Setting up the initial NLP extraction pipeline and API handshakewith Notion.
+**In Development:** Version 1.0 (MVP). Setting up the initial NLP extraction pipeline and API handshake with Notion.
