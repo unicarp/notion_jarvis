@@ -17,7 +17,7 @@ Make sure to have already installed any Conda or Miniconda Version. You can inst
 
 ### 1. Clone the repository
 ```
-git clone [https://github.com/unicarp/notion_jarvis.git](https://github.com/unicarp/notion_jarvis.git)
+git clone https://github.com/unicarp/notion_jarvis.git
 cd notion_jarvis
 ```
 
