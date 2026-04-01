@@ -9,6 +9,7 @@ ready for database ingestion.
 
 import os
 import json
+from datetime import datetime
 from dotenv import load_dotenv
 from groq import Groq
 
@@ -45,17 +46,20 @@ def orchestrate_tasks(user_input,*, target_language = "Spanish"):
         json.JSONDecodeError: If the API fails to return a valid JSON string.
     """
 
+    today_date = datetime.now().strftime("%Y-%m-%d")
+
     prompt = f"""
     You are a professional life orchestrator.
+    Today's date is {today_date}.
     Analyze the following text, extract individual tasks, deadlines (ONLY if provided) and prioritize each individual task.
 
     CRITICAL RULES:
     1. Return ONLY a valid JSON object with a single key "tasks" containing an array of objects.
-    2. Write the "tasks" description in {target_language}, regardless of the input language.
+    2. Write the "tasks" description and priority in {target_language}, regardless of the input language.
     3. Each JSON object must be strictly following this schema:
-        - "task" : (string) Short, actionable description
-        - "priority" : (string: "High", "Medium", "Low")
-        - "due_date" : (string: "YYYY-MM-DD" or null)
+        - "task" : (string) Short, actionable description. Make sure to translate correctly the taks description to {target_language}
+        - "priority" : (string: "Bajísima", "Baja", "Media","Alta","Altísima")
+        - "due_date" : (string: "YYYY-MM-DD" or null. Calculate relative dates like 'Tomorrow' or 'Next Friday' based on today: {today_date})
     
     Input text: "{user_input}"
     """
@@ -78,9 +82,9 @@ def orchestrate_tasks(user_input,*, target_language = "Spanish"):
 
 if __name__ == "__main__":
     print("---Jarvis Brain Test---")
-    raw_text = "I need to finish the statistics assignment by Friday and buy groceries today"
+    raw_text = "Tengo que entregar el proyecto de estadística mañana sin falta, y avanzar el project wildcard para el próximo lunes."
     try:
         tasks = orchestrate_tasks(raw_text)
-        print(json.dumps(tasks, indent=4))
+        print(json.dumps(tasks, indent=4, ensure_ascii=False))
     except Exception as e:
         print(f"Error: {e}")
