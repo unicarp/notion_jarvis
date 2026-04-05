@@ -36,7 +36,9 @@ Create a `.env` file in the project's root directory (it is highly recommended t
 GROQ_API_KEY="your_groq_api_key"
 NOTION_DATABASE_ID="your_notion_target_database_id"
 NOTION_API_KEY="your_notion_internal_integration_token"
+TELEGRAM_TOKEN = "your_telegram_bot_token"
+TELEGRAM_USER_ID = "your_telegram_user_id"
 ```
 
 ## Current Status
-**In Development:** Version 1.0 (MVP). Setting up the initial NLP extraction pipeline and API handshake with Notion.
+**In Development:** Version 2.0 (Always-On). Setting up webhooks for safe online "Always-On" Cloud storage.
